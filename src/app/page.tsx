@@ -6,13 +6,13 @@ export default function Home() {
     <main className="relative flex min-h-screen flex-col items-center justify-center p-4">
       <div 
         className="absolute inset-0 -z-10 h-full w-full bg-background bg-[url('https://placehold.co/1920x1080.png')] bg-cover bg-center"
-        data-ai-hint="college campus"
+        data-ai-hint="university building"
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="mb-8 text-center text-white">
         <div className="mb-4 flex justify-center">
-            <GraduationCap size={64} />
+            <GraduationCap size={64} className="text-primary"/>
         </div>
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Student Central Hub
