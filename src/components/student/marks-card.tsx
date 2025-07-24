@@ -52,7 +52,7 @@ export function MarksCard({ marks }: MarksCardProps) {
                   <TableCell className="text-center">{data.internal2}</TableCell>
                   <TableCell className="text-center font-semibold">{total}</TableCell>
                   <TableCell className="text-center">
-                    <Badge variant={data.grade.startsWith('A') ? 'default' : 'secondary'} className="bg-accent text-accent-foreground">{data.grade}</Badge>
+                    <Badge variant={data.grade.startsWith('A') || data.grade.startsWith('B') ? 'default' : 'secondary'} className={data.grade.startsWith('A') || data.grade.startsWith('B') ? 'bg-accent text-accent-foreground' : ''}>{data.grade}</Badge>
                   </TableCell>
                 </TableRow>
               )
