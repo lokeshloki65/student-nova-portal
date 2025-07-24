@@ -1,4 +1,4 @@
-import type { Student, Marks, AttendanceRecord, Announcement } from './types';
+import type { Student, Marks, AttendanceRecord, Announcement, Timetable } from './types';
 
 export const STUDENTS: Student[] = [
   {
@@ -8,7 +8,7 @@ export const STUDENTS: Student[] = [
     regNo: 'S2021001',
     department: 'Computer Science',
     year: 3,
-    classes: ['Data Structures', 'Algorithms', 'Database Management'],
+    classes: ['Data Structures', 'Algorithms', 'Database Management', 'Operating Systems', 'Networks'],
   },
   {
     id: 'student-2',
@@ -17,7 +17,7 @@ export const STUDENTS: Student[] = [
     regNo: 'S2021002',
     department: 'Mechanical Engineering',
     year: 3,
-    classes: ['Thermodynamics', 'Fluid Mechanics', 'Machine Design'],
+    classes: ['Thermodynamics', 'Fluid Mechanics', 'Machine Design', 'Material Science', 'Heat Transfer'],
   },
 ];
 
@@ -36,6 +36,18 @@ export const MARKS_DATA: Marks[] = [
       'Data Structures': { internal1: 85, internal2: 90, grade: 'A' },
       'Algorithms': { internal1: 88, internal2: 92, grade: 'A+' },
       'Database Management': { internal1: 78, internal2: 82, grade: 'B+' },
+      'Operating Systems': { internal1: 81, internal2: 85, grade: 'A' },
+      'Networks': { internal1: 75, internal2: 79, grade: 'B' },
+    },
+  },
+   {
+    studentId: 'student-2',
+    subjects: {
+      'Thermodynamics': { internal1: 90, internal2: 91, grade: 'A+' },
+      'Fluid Mechanics': { internal1: 82, internal2: 88, grade: 'A' },
+      'Machine Design': { internal1: 76, internal2: 81, grade: 'B+' },
+      'Material Science': { internal1: 85, internal2: 89, grade: 'A' },
+      'Heat Transfer': { internal1: 78, internal2: 80, grade: 'B' },
     },
   },
 ];
@@ -73,3 +85,20 @@ export const ANNOUNCEMENTS: Announcement[] = [
         for_department: 'Computer Science'
     },
 ];
+
+export const TIMETABLE_DATA: { [department: string]: { [year: string]: Timetable } } = {
+    "Computer Science": {
+        "3": {
+            "Monday": [
+                { period: 1, subject: "Operating Systems", time: "9:00 - 10:00", teacher: "Dr. Alan Grant" },
+                { period: 2, subject: "Networks", time: "10:00 - 11:00", teacher: "Dr. Ellie Sattler" },
+                { period: 3, subject: "Database Management", time: "11:00 - 12:00", teacher: "Dr. Ian Malcolm" },
+            ],
+            "Tuesday": [
+                { period: 1, subject: "Data Structures", time: "9:00 - 10:00", teacher: "Dr. John Hammond" },
+                { period: 2, subject: "Algorithms", time: "10:00 - 11:00", teacher: "Mr. Dennis Nedry" },
+                { period: 3, subject: "Operating Systems", time: "11:00 - 12:00", teacher: "Dr. Alan Grant" },
+            ]
+        }
+    }
+}

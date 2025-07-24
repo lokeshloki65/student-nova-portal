@@ -38,3 +38,14 @@ export interface PrioritizationResult {
     isRelevant: boolean;
     reason: string;
 }
+
+export interface TimetableEntry {
+  period: number;
+  subject: string;
+  time: string;
+  teacher: string;
+}
+
+export interface Timetable {
+    [day: string]: TimetableEntry[];
+}
