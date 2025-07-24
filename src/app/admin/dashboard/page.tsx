@@ -3,9 +3,10 @@ import { AttendanceManager } from "@/components/admin/attendance-manager";
 import { MarksManager } from "@/components/admin/marks-manager";
 import { AnnouncementPrioritizer } from "@/components/admin/announcement-prioritizer";
 import { StudentManager } from "@/components/admin/student-manager";
+import { AdminManager } from "@/components/admin/admin-manager";
 import { TimetableManager } from "@/components/admin/timetable-manager";
 import { STUDENTS, ADMIN_USER, TIMETABLE_DATA } from "@/lib/mock-data";
-import { CalendarCheck, ClipboardList, Megaphone, Users, CalendarClock } from "lucide-react";
+import { CalendarCheck, ClipboardList, Megaphone, Users, CalendarClock, UserCog } from "lucide-react";
 
 export default function AdminDashboard() {
   return (
@@ -15,8 +16,9 @@ export default function AdminDashboard() {
         <p className="text-muted-foreground">Welcome, {ADMIN_USER.name}.</p>
       </div>
       <Tabs defaultValue="students" className="w-full">
-        <TabsList className="grid w-full grid-cols-1 md:grid-cols-5">
+        <TabsList className="grid w-full grid-cols-1 md:grid-cols-6">
           <TabsTrigger value="students"><Users className="mr-2" />Manage Students</TabsTrigger>
+          <TabsTrigger value="admins"><UserCog className="mr-2" />Manage Admins</TabsTrigger>
           <TabsTrigger value="attendance"><CalendarCheck className="mr-2" />Manage Attendance</TabsTrigger>
           <TabsTrigger value="marks"><ClipboardList className="mr-2" />Manage Marks</TabsTrigger>
           <TabsTrigger value="announcements"><Megaphone className="mr-2" />Announcements</TabsTrigger>
@@ -24,6 +26,9 @@ export default function AdminDashboard() {
         </TabsList>
         <TabsContent value="students">
             <StudentManager students={STUDENTS} />
+        </TabsContent>
+        <TabsContent value="admins">
+            <AdminManager admins={[ADMIN_USER]} />
         </TabsContent>
         <TabsContent value="attendance">
           <AttendanceManager students={STUDENTS} />

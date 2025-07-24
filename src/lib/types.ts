@@ -8,6 +8,13 @@ export interface Student {
   classes: string[];
 }
 
+export interface AdminUser {
+    id: string;
+    name: string;
+    email: string;
+    role: 'Admin';
+}
+
 export interface Marks {
   studentId: string;
   subjects: {

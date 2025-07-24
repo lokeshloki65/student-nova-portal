@@ -1,4 +1,4 @@
-import type { Student, Marks, AttendanceRecord, Announcement, Timetable } from './types';
+import type { Student, Marks, AttendanceRecord, Announcement, Timetable, AdminUser } from './types';
 
 export const STUDENTS: Student[] = [
   {
@@ -21,7 +21,7 @@ export const STUDENTS: Student[] = [
   },
 ];
 
-export const ADMIN_USER = {
+export const ADMIN_USER: AdminUser = {
   id: 'admin-1',
   name: 'Dr. Evelyn Reed',
   email: 'e.reed@university.edu',
