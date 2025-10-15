@@ -19,7 +19,7 @@ export async function prioritizeAnnouncementAction(
     const results = await aiPoweredAnnouncementPrioritization({
       announcement,
       studentData,
-    });
+    });       
     return results;
   } catch (error) {
     console.error("Error in AI prioritization:", error);
