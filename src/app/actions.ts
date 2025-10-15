@@ -6,7 +6,7 @@ import { Student, PrioritizationResult } from "@/lib/types";
 export async function prioritizeAnnouncementAction(
   announcement: string,
   students: Student[]
-): Promise<PrioritizationResult[]> {
+): Promise<PrioritizationResult[]> {   
   try {
     const studentData = students.map(({ id, name, department, year, classes }) => ({
       studentId: id,
