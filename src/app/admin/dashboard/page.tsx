@@ -9,7 +9,7 @@ import { STUDENTS, ADMIN_USER, TIMETABLE_DATA } from "@/lib/mock-data";
 import { CalendarCheck, ClipboardList, Megaphone, Users, CalendarClock, UserCog } from "lucide-react";
 
 export default function AdminDashboard() {
-  return (
+  return (      
     <>
       <div className="mb-6">
         <h1 className="text-3xl font-bold">Admin Dashboard</h1>
